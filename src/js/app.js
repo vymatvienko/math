@@ -25,12 +25,12 @@ export default class Character {
   }
 
   get attack() {
-    let test = this.power * (1 - (this.distance - 1) / 10);
+    let attackPower = this.power * (1 - (this.distance - 1) / 10);
 
     if (this.getStoned) {
-      test = Number((test - Math.log2(this.distance) * 5).toFixed(2));
+      attackPower = Number((attackPower - Math.log2(this.distance) * 5).toFixed(2));
     }
 
-    return test;
+    return attackPower;
   }
 }
